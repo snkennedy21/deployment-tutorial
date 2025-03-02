@@ -16,7 +16,17 @@ This guide walks through setting up a **DigitalOcean Droplet**, configuring **Ng
 3. Create a basic HTML file:
    ```sh
    mkdir public
-   echo "<h1>Welcome to My Web App</h1>" > public/index.html
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Deployment Tutorial</title>
+     </head>
+     <body>
+       <h1>This page is served via Nginx. So cool!</h1>
+     </body>
+   </html>
    ```
 4. Create an initial commit:
    ```sh
