@@ -35,7 +35,7 @@ This guide walks through setting up a **DigitalOcean Droplet**, configuring **Ng
 1. Log in to **[DigitalOcean](https://cloud.digitalocean.com/)**.
 2. Click **Create Droplet**.
 3. Choose **Ubuntu 22.04** as the operating system.
-4. Select the smallest available plan (**Basic, $4/month**).
+4. Select the smallest available plan (**Basic, $6/month**).
 5. Choose a data center region close to your users.
 6. Under **Authentication**, select **SSH keys** and add your local public key (or create a password).
 7. Click **Create Droplet** and copy the public IP address.
