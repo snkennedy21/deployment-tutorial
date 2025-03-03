@@ -13,10 +13,19 @@ This guide walks through setting up a **DigitalOcean Droplet**, configuring **Ng
    ```sh
    git init
    ```
-3. Create a basic HTML file:
+3. Create a basic HTML file in the public folder
    ```sh
-   mkdir public
-   echo "<h1>Welcome to My Web App</h1>" > public/index.html
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Deployment Tutorial</title>
+     </head>
+     <body>
+       <h1>This page is served via Nginx. So cool!</h1>
+     </body>
+   </html>
    ```
 4. Create an initial commit:
    ```sh
@@ -78,17 +87,11 @@ If you didn’t add an SSH key while creating the Droplet, do the following on y
    ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
    ```
    Press **Enter** for all prompts.
-2. **Copy the public key:**
+2. **Copy the public key and add it to Github:**
    ```sh
    cat ~/.ssh/id_rsa.pub
    ```
-3. **Add the key to GitHub (Settings → SSH Keys).**
-4. **Test the connection:**
-   ```sh
-   ssh -T git@github.com
-   ```
-   You should see a confirmation message.
-
+   
 ---
 
 ## **Step 6: Clone Your Repository**
@@ -114,13 +117,10 @@ cd nginx-deploy
 ---
 
 ## **Step 8: Modify the Nginx Configuration**
-1. **Move the static files to Nginx’s web root:**
-   ```sh
-   sudo cp -r public/* /var/www/html/
-   ```
+1. **Copy the html file to /var/www/html/:**
 2. **Update Nginx configuration:**
    ```sh
-   sudo nano /etc/nginx/sites-available/default
+   vim /etc/nginx/sites-available/default
    ```
    Replace the contents with:
    ```nginx
@@ -133,7 +133,6 @@ cd nginx-deploy
        }
    }
    ```
-   Save and exit (**CTRL + X**, then **Y**, then **Enter**).
 
 ---
 
